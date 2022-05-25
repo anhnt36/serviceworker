@@ -21,6 +21,7 @@
                 const status = await navigator.permissions.query({
                     name: 'periodic-background-sync',
                 });
+                navigator.permissions.query({ name: "periodic-background-sync" }).then((status)=>{ console.log(status)})
                 if (status.state === 'granted') {
                     try {
                         // Register new sync every 24 hours
